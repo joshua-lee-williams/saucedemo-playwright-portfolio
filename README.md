@@ -219,8 +219,8 @@ MIT
 
 **Joshua Williams**
 
-- GitHub: [@yourusername](https://github.com/joshua-lee-williams)
-- LinkedIn: [Your LinkedIn](https://www.linkedin.com/in/joshua-lee-williams/)
+- GitHub: [@joshua-lee-williams](https://github.com/joshua-lee-williams)
+- LinkedIn: [Joshua Lee Williams](https://www.linkedin.com/in/joshua-lee-williams/)
 
 ## 🙏 Acknowledgments
 
@@ -231,3 +231,4 @@ MIT
 ---
 
 **Note:** This project is for educational and portfolio purposes only.
+
