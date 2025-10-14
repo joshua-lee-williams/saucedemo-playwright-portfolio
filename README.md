@@ -1,8 +1,8 @@
-# 🎯 Saucedemo Playwright Test Automation Portfolio
+# Saucedemo Playwright Test Automation Portfolio
 
 A comprehensive test automation framework built with Playwright for testing [Saucedemo.com](https://www.saucedemo.com) - demonstrating modern testing practices and clean code architecture.
 
-## 🚀 Features Demonstrated
+## Features Demonstrated
 
 - ✅ **Page Object Model (POM)** - Clean, maintainable test architecture
 - ✅ **Cross-browser Testing** - Chromium, Firefox, and WebKit
@@ -11,7 +11,7 @@ A comprehensive test automation framework built with Playwright for testing [Sau
 - ✅ **CI/CD Ready** - GitHub Actions integration (coming soon)
 - ✅ **Best Practices** - Proper assertions, error handling, and test organization
 
-## 📦 Prerequisites
+## Prerequisites
 
 - Node.js (v16 or higher)
 - npm or yarn
@@ -231,4 +231,3 @@ MIT
 ---
 
 **Note:** This project is for educational and portfolio purposes only.
-
