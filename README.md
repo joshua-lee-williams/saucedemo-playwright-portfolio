@@ -1,17 +1,22 @@
-# Saucedemo Playwright Test Automation Portfolio
+# 🎯 Saucedemo Playwright Test Automation Portfolio
+
+[![Playwright Tests](https://github.com/joshua-lee-williams/saucedemo-playwright-portfolio/actions/workflows/playwright.yml/badge.svg)](https://github.com/joshua-lee-williams/saucedemo-playwright-portfolio/actions/workflows/playwright.yml)
+[![Multi-Browser Tests](https://github.com/joshua-lee-williams/saucedemo-playwright-portfolio/actions/workflows/playwright-multi-browser.yml/badge.svg)](https://github.com/joshua-lee-williams/saucedemo-playwright-portfolio/actions/workflows/playwright-multi-browser.yml)
 
 A comprehensive test automation framework built with Playwright for testing [Saucedemo.com](https://www.saucedemo.com) - demonstrating modern testing practices and clean code architecture.
 
-## Features Demonstrated
+## 🚀 Features Demonstrated
 
 - ✅ **Page Object Model (POM)** - Clean, maintainable test architecture
 - ✅ **Cross-browser Testing** - Chromium, Firefox, and WebKit
 - ✅ **Parallel Test Execution** - Fast test runs
 - ✅ **Comprehensive Reporting** - HTML, JSON, and list reporters
-- ✅ **CI/CD Ready** - GitHub Actions integration (coming soon)
+- ✅ **CI/CD Pipeline** - GitHub Actions with automated testing
+- ✅ **Multi-browser Matrix Testing** - Tests run on all browsers automatically
+- ✅ **Scheduled Test Runs** - Daily automated regression testing
 - ✅ **Best Practices** - Proper assertions, error handling, and test organization
 
-## Prerequisites
+## 📦 Prerequisites
 
 - Node.js (v16 or higher)
 - npm or yarn
@@ -169,6 +174,18 @@ saucedemo-playwright-portfolio/
 - Performance testing
 - Data-driven test fixtures
 
+## 🔄 CI/CD Pipeline
+
+This project uses **GitHub Actions** for continuous integration:
+
+- **Automatic Test Runs** - Tests run on every push and pull request
+- **Multi-Browser Testing** - Parallel execution across Chromium, Firefox, and WebKit
+- **Daily Scheduled Runs** - Automated regression testing every day at 9 AM UTC
+- **Test Artifacts** - Reports and screenshots available for download
+- **Manual Triggers** - Run tests on-demand from the Actions tab
+
+View the test results in the [Actions tab](https://github.com/joshua-lee-williams/saucedemo-playwright-portfolio/actions).
+
 ## 🎨 Page Object Model
 
 Each page is represented as a class with:
@@ -217,9 +234,9 @@ MIT
 
 ## 👤 Author
 
-**Joshua Williams**
+**Joshua Lee Williams**
 
-- GitHub: [@joshua-lee-williams](https://github.com/joshua-lee-williams)
+- GitHub: [@joshua-lee-williams](https://github.com/joshua-lee-williams/)
 - LinkedIn: [Joshua Lee Williams](https://www.linkedin.com/in/joshua-lee-williams/)
 
 ## 🙏 Acknowledgments
