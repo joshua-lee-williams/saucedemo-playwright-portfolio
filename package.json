@@ -1,0 +1,34 @@
+{
+  "name": "saucedemo-playwright-portfolio",
+  "version": "1.0.0",
+  "description": "Playwright test automation portfolio project for saucedemo.com",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "test:debug": "playwright test --debug",
+    "test:chromium": "playwright test --project=chromium",
+    "test:firefox": "playwright test --project=firefox",
+    "test:webkit": "playwright test --project=webkit",
+    "test:login": "playwright test tests/e2e/login.spec.js",
+    "test:products": "playwright test tests/e2e/products.spec.js",
+    "test:cart": "playwright test tests/e2e/cart.spec.js",
+    "test:checkout": "playwright test tests/e2e/checkout.spec.js",
+    "test:e2e": "playwright test tests/e2e/",
+    "report": "playwright show-report",
+    "codegen": "playwright codegen https://www.saucedemo.com"
+  },
+  "keywords": [
+    "playwright",
+    "testing",
+    "automation",
+    "e2e",
+    "saucedemo"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.40.0"
+  }
+}
