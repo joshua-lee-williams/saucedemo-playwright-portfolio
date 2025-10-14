@@ -1,3 +1,5 @@
+import { users } from "../fixtures/testData.js";
+
 export class LoginPage {
   constructor(page) {
     this.page = page;
@@ -51,6 +53,6 @@ export class LoginPage {
    * Quick login helper for standard user
    */
   async loginAsStandardUser() {
-    await this.login("standard_user", "secret_sauce");
+    await this.login(users.standard.username, users.standard.password);
   }
 }
