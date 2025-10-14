@@ -1,6 +1,7 @@
 import { test, expect } from "@playwright/test";
 import { LoginPage } from "../../pages/LoginPage";
 import { ProductsPage } from "../../pages/ProductsPage";
+import { users } from "../../fixtures/testData.js";
 
 test.describe("Login Tests", () => {
   let loginPage;
@@ -13,7 +14,7 @@ test.describe("Login Tests", () => {
   });
 
   test("should login successfully with valid credentials", async ({ page }) => {
-    await loginPage.login("standard_user", "secret_sauce");
+    await loginPage.login(users.standard.username, users.standard.password);
 
     // Verify we're on the products page
     await expect(page).toHaveURL(/.*inventory.html/);
@@ -21,7 +22,7 @@ test.describe("Login Tests", () => {
   });
 
   test("should show error for invalid username", async () => {
-    await loginPage.login("invalid_user", "secret_sauce");
+    await loginPage.login(users.invalid.username, users.invalid.password);
 
     // Verify error message appears
     expect(await loginPage.isErrorVisible()).toBeTruthy();
@@ -30,7 +31,7 @@ test.describe("Login Tests", () => {
   });
 
   test("should show error for invalid password", async () => {
-    await loginPage.login("standard_user", "wrong_password");
+    await loginPage.login(users.standard.username, users.invalid.password);
 
     // Verify error message appears
     expect(await loginPage.isErrorVisible()).toBeTruthy();
@@ -57,7 +58,7 @@ test.describe("Login Tests", () => {
   });
 
   test("should show error for locked out user", async () => {
-    await loginPage.login("locked_out_user", "secret_sauce");
+    await loginPage.login(users.lockedOut.username, users.lockedOut.password);
 
     // Verify error message appears
     expect(await loginPage.isErrorVisible()).toBeTruthy();
@@ -66,7 +67,7 @@ test.describe("Login Tests", () => {
   });
 
   test("should clear error message when clicking X button", async () => {
-    await loginPage.login("invalid_user", "secret_sauce");
+    await loginPage.login(users.invalid.username, users.invalid.password);
 
     // Verify error appears
     expect(await loginPage.isErrorVisible()).toBeTruthy();
@@ -85,7 +86,7 @@ test.describe("Login Tests", () => {
 
     // Clear and try again with correct credentials
     await loginPage.clearError();
-    await loginPage.login("standard_user", "secret_sauce");
+    await loginPage.login(users.standard.username, users.standard.password);
 
     // Should succeed
     await expect(page).toHaveURL(/.*inventory.html/);
