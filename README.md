@@ -16,7 +16,7 @@ A comprehensive test automation framework built with Playwright for testing [Sau
 - ✅ **Scheduled Test Runs** - Daily automated regression testing
 - ✅ **Best Practices** - Proper assertions, error handling, and test organization
 
-## 📦 Prerequisites
+## Prerequisites
 
 - Node.js (v16 or higher)
 - npm or yarn
@@ -42,7 +42,7 @@ npm install
 npx playwright install
 ```
 
-## ▶️ Running Tests
+## Running Tests
 
 ```bash
 # Run all tests
@@ -75,7 +75,7 @@ npm run test:e2e
 npm run report
 ```
 
-## 📊 Test Reports
+## Test Reports
 
 After running tests, view the HTML report:
 
@@ -90,7 +90,7 @@ Reports include:
 - Video recordings on failure
 - Detailed traces for debugging
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```
 saucedemo-playwright-portfolio/
@@ -110,7 +110,7 @@ saucedemo-playwright-portfolio/
 └── README.md                   # This file
 ```
 
-## 🧪 Test Coverage
+## Test Coverage
 
 ### Login Tests ✅ (8 tests)
 
@@ -174,7 +174,7 @@ saucedemo-playwright-portfolio/
 - Performance testing
 - Data-driven test fixtures
 
-## 🔄 CI/CD Pipeline
+## CI/CD Pipeline
 
 This project uses **GitHub Actions** for continuous integration:
 
@@ -186,7 +186,7 @@ This project uses **GitHub Actions** for continuous integration:
 
 View the test results in the [Actions tab](https://github.com/joshua-lee-williams/saucedemo-playwright-portfolio/actions).
 
-## 🎨 Page Object Model
+## Page Object Model
 
 Each page is represented as a class with:
 
@@ -224,22 +224,22 @@ GitHub Actions workflow for:
 - Artifact uploads (reports, videos)
 - Scheduled test runs
 
-## 🤝 Contributing
+## Contributing
 
-This is a portfolio project, but suggestions are welcome!
+None Contributing--this is a portfolio project, but suggestions are welcome!
 
-## 📝 License
+## License
 
 MIT
 
-## 👤 Author
+## Author
 
 **Joshua Lee Williams**
 
 - GitHub: [@joshua-lee-williams](https://github.com/joshua-lee-williams/)
 - LinkedIn: [Joshua Lee Williams](https://www.linkedin.com/in/joshua-lee-williams/)
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - [Playwright Documentation](https://playwright.dev)
 - [Saucedemo](https://www.saucedemo.com) - Test application
@@ -248,4 +248,5 @@ MIT
 ---
 
 **Note:** This project is for educational and portfolio purposes only.
+
 
