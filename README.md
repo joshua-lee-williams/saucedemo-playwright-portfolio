@@ -98,13 +98,13 @@ saucedemo-playwright-portfolio/
 │   └── e2e/
 │       ├── login.spec.js       # Login functionality tests
 │       ├── products.spec.js    # Product page tests
-│       ├── cart.spec.js        # Shopping cart tests (coming soon)
-│       └── checkout.spec.js    # Checkout flow tests (coming soon)
+│       ├── cart.spec.js        # Shopping cart tests
+│       └── checkout.spec.js    # Checkout flow tests
 ├── pages/
 │   ├── LoginPage.js            # Login page object
 │   ├── ProductsPage.js         # Products page object
-│   ├── CartPage.js             # Cart page object (coming soon)
-│   └── CheckoutPage.js         # Checkout page object (coming soon)
+│   ├── CartPage.js             # Cart page object
+│   └── CheckoutPage.js         # Checkout page object
 ├── playwright.config.js        # Playwright configuration
 ├── package.json                # Project dependencies
 └── README.md                   # This file
@@ -248,6 +248,7 @@ MIT
 ---
 
 **Note:** This project is for educational and portfolio purposes only.
+
 
 
 
