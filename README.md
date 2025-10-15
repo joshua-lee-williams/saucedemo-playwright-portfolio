@@ -21,7 +21,7 @@ A comprehensive test automation framework built with Playwright for testing [Sau
 - Node.js (v16 or higher)
 - npm or yarn
 
-## 🛠️ Installation
+## Installation
 
 1. Clone the repository:
 
@@ -248,5 +248,6 @@ MIT
 ---
 
 **Note:** This project is for educational and portfolio purposes only.
+
 
 
