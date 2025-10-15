@@ -26,7 +26,6 @@ test.describe("Shopping Cart Tests", () => {
 
     expect(await cartPage.isOnCartPage()).toBe(true);
     expect(await cartPage.isCartEmpty()).toBe(true);
-
   });
 
   test("should display added items in cart", async ({ page }) => {
@@ -72,8 +71,8 @@ test.describe("Shopping Cart Tests", () => {
     await cartPage.removeItemByName(cartItems.firstCartItem);
 
     expect(await cartPage.getCartItemCount()).toBe(1);
-    expect(await cartPage.hasItem(cartItems.secondCartItem)).toBe(true));
-    expect(await cartPage.hasItem(cartItems.firstCartItem)).toBe(false));
+    expect(await cartPage.hasItem(cartItems.secondCartItem)).toBe(true);
+    expect(await cartPage.hasItem(cartItems.firstCartItem)).toBe(false);
   });
 
   test("should remove all items from cart", async ({ page }) => {
