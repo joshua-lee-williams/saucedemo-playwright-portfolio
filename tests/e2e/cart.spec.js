@@ -24,8 +24,8 @@ test.describe("Shopping Cart Tests", () => {
     await productsPage.goToCart();
     await expect(page).toHaveURL(/.*cart.html/);
 
-    expect(await cartPage.isOnCartPage()).toBeTruthy();
-    expect(await cartPage.isCartEmpty()).toBeTruthy();
+    expect(await cartPage.isOnCartPage()).toBe(true));
+    expect(await cartPage.isCartEmpty()).toBe(true));
   });
 
   test("should display added items in cart", async ({ page }) => {
@@ -71,8 +71,8 @@ test.describe("Shopping Cart Tests", () => {
     await cartPage.removeItemByName(cartItems.firstCartItem);
 
     expect(await cartPage.getCartItemCount()).toBe(1);
-    expect(await cartPage.hasItem(cartItems.secondCartItem)).toBeTruthy();
-    expect(await cartPage.hasItem(cartItems.firstCartItem)).toBeFalsy();
+    expect(await cartPage.hasItem(cartItems.secondCartItem)).toBe(true));
+    expect(await cartPage.hasItem(cartItems.firstCartItem)).toBe(false));
   });
 
   test("should remove all items from cart", async ({ page }) => {
@@ -87,7 +87,7 @@ test.describe("Shopping Cart Tests", () => {
     // Remove all items
     await cartPage.removeAllItems();
 
-    expect(await cartPage.isCartEmpty()).toBeTruthy();
+    expect(await cartPage.isCartEmpty()).toBe(true);
   });
 
   test("should calculate correct total for items", async ({ page }) => {
@@ -160,7 +160,7 @@ test.describe("Shopping Cart Tests", () => {
     // Cart is empty, but button should still be present
     // Saucedemo allows clicking checkout even with empty cart
     // This is actually a bug in the application, but we test the actual behavior
-    expect(await cartPage.isCartEmpty()).toBeTruthy();
+    expect(await cartPage.isCartEmpty()).toBe(true);
   });
 
   test("should handle adding same item multiple times", async ({ page }) => {
