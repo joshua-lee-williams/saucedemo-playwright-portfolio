@@ -1,11 +1,11 @@
-# 🎯 Saucedemo Playwright Test Automation Portfolio
+# Saucedemo Playwright Test Automation Portfolio
 
 [![Playwright Tests](https://github.com/joshua-lee-williams/saucedemo-playwright-portfolio/actions/workflows/playwright.yml/badge.svg)](https://github.com/joshua-lee-williams/saucedemo-playwright-portfolio/actions/workflows/playwright.yml)
 [![Multi-Browser Tests](https://github.com/joshua-lee-williams/saucedemo-playwright-portfolio/actions/workflows/playwright-multi-browser.yml/badge.svg)](https://github.com/joshua-lee-williams/saucedemo-playwright-portfolio/actions/workflows/playwright-multi-browser.yml)
 
 A comprehensive test automation framework built with Playwright for testing [Saucedemo.com](https://www.saucedemo.com) - demonstrating modern testing practices and clean code architecture.
 
-## 🚀 Features Demonstrated
+## Features Demonstrated
 
 - ✅ **Page Object Model (POM)** - Clean, maintainable test architecture
 - ✅ **Cross-browser Testing** - Chromium, Firefox, and WebKit
@@ -248,3 +248,4 @@ MIT
 ---
 
 **Note:** This project is for educational and portfolio purposes only.
+
