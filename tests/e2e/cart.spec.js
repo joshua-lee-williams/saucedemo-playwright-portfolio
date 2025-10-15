@@ -2,6 +2,7 @@ import { test, expect } from "@playwright/test";
 import { LoginPage } from "../../pages/LoginPage";
 import { ProductsPage } from "../../pages/ProductsPage";
 import { CartPage } from "../../pages/CartPage";
+import { cartItems } from "../../fixtures/testData.js";
 
 test.describe("Shopping Cart Tests", () => {
   let loginPage;
@@ -29,8 +30,8 @@ test.describe("Shopping Cart Tests", () => {
 
   test("should display added items in cart", async ({ page }) => {
     // Add items from products page
-    await productsPage.addProductToCart("Sauce Labs Backpack");
-    await productsPage.addProductToCart("Sauce Labs Bike Light");
+    await productsPage.addProductToCart(cartItems.firstCartItem);
+    await productsPage.addProductToCart(cartItems.secondCartItem);
 
     // Go to cart
     await productsPage.goToCart();
@@ -39,16 +40,18 @@ test.describe("Shopping Cart Tests", () => {
     expect(await cartPage.getCartItemCount()).toBe(2);
 
     const itemNames = await cartPage.getCartItemNames();
-    expect(itemNames).toContain("Sauce Labs Backpack");
-    expect(itemNames).toContain("Sauce Labs Bike Light");
+    expect(itemNames).toContain(cartItems.firstCartItem);
+    expect(itemNames).toContain(cartItems.secondCartItem);
   });
 
   test("should display correct item details in cart", async ({ page }) => {
-    await productsPage.addProductToCart("Sauce Labs Backpack");
+    await productsPage.addProductToCart(cartItems.firstCartItem);
     await productsPage.goToCart();
 
     const items = await cartPage.getCartItems();
-    const backpack = items.find((item) => item.name === "Sauce Labs Backpack");
+    const backpack = items.find(
+      (item) => item.name === cartItems.firstCartItem
+    );
 
     expect(backpack).toBeDefined();
     expect(backpack.price).toBe("$29.99");
@@ -58,25 +61,25 @@ test.describe("Shopping Cart Tests", () => {
 
   test("should remove item from cart", async ({ page }) => {
     // Add two items
-    await productsPage.addProductToCart("Sauce Labs Backpack");
-    await productsPage.addProductToCart("Sauce Labs Bike Light");
+    await productsPage.addProductToCart(cartItems.firstCartItem);
+    await productsPage.addProductToCart(cartItems.secondCartItem);
     await productsPage.goToCart();
 
     expect(await cartPage.getCartItemCount()).toBe(2);
 
     // Remove one item
-    await cartPage.removeItemByName("Sauce Labs Backpack");
+    await cartPage.removeItemByName(cartItems.firstCartItem);
 
     expect(await cartPage.getCartItemCount()).toBe(1);
-    expect(await cartPage.hasItem("Sauce Labs Bike Light")).toBeTruthy();
-    expect(await cartPage.hasItem("Sauce Labs Backpack")).toBeFalsy();
+    expect(await cartPage.hasItem(cartItems.secondCartItem)).toBeTruthy();
+    expect(await cartPage.hasItem(cartItems.firstCartItem)).toBeFalsy();
   });
 
   test("should remove all items from cart", async ({ page }) => {
     // Add multiple items
-    await productsPage.addProductToCart("Sauce Labs Backpack");
-    await productsPage.addProductToCart("Sauce Labs Bike Light");
-    await productsPage.addProductToCart("Sauce Labs Bolt T-Shirt");
+    await productsPage.addProductToCart(cartItems.firstCartItem);
+    await productsPage.addProductToCart(cartItems.secondCartItem);
+    await productsPage.addProductToCart(cartItems.thirdCartItem);
     await productsPage.goToCart();
 
     expect(await cartPage.getCartItemCount()).toBe(3);
@@ -88,8 +91,8 @@ test.describe("Shopping Cart Tests", () => {
   });
 
   test("should calculate correct total for items", async ({ page }) => {
-    await productsPage.addProductToCart("Sauce Labs Backpack"); // $29.99
-    await productsPage.addProductToCart("Sauce Labs Bike Light"); // $9.99
+    await productsPage.addProductToCart(cartItems.firstCartItem); // $29.99
+    await productsPage.addProductToCart(cartItems.secondCartItem); // $9.99
     await productsPage.goToCart();
 
     const total = await cartPage.calculateItemsTotal();
@@ -99,7 +102,7 @@ test.describe("Shopping Cart Tests", () => {
   test("should navigate back to products page via Continue Shopping", async ({
     page,
   }) => {
-    await productsPage.addProductToCart("Sauce Labs Backpack");
+    await productsPage.addProductToCart(cartItems.firstCartItem);
     await productsPage.goToCart();
 
     await cartPage.continueShopping();
@@ -108,7 +111,7 @@ test.describe("Shopping Cart Tests", () => {
   });
 
   test("should proceed to checkout", async ({ page }) => {
-    await productsPage.addProductToCart("Sauce Labs Backpack");
+    await productsPage.addProductToCart(cartItems.firstCartItem);
     await productsPage.goToCart();
 
     await cartPage.proceedToCheckout();
@@ -120,8 +123,8 @@ test.describe("Shopping Cart Tests", () => {
     page,
   }) => {
     // Add items
-    await productsPage.addProductToCart("Sauce Labs Backpack");
-    await productsPage.addProductToCart("Sauce Labs Bike Light");
+    await productsPage.addProductToCart(cartItems.firstCartItem);
+    await productsPage.addProductToCart(cartItems.secondCartItem);
 
     // Go to cart
     await productsPage.goToCart();
@@ -140,14 +143,14 @@ test.describe("Shopping Cart Tests", () => {
   test("should display cart badge count correctly", async () => {
     expect(await productsPage.getCartCount()).toBe(0);
 
-    await productsPage.addProductToCart("Sauce Labs Backpack");
+    await productsPage.addProductToCart(cartItems.firstCartItem);
     expect(await productsPage.getCartCount()).toBe(1);
 
-    await productsPage.addProductToCart("Sauce Labs Bike Light");
+    await productsPage.addProductToCart(cartItems.secondCartItem);
     expect(await productsPage.getCartCount()).toBe(2);
 
     await productsPage.goToCart();
-    await cartPage.removeItemByName("Sauce Labs Backpack");
+    await cartPage.removeItemByName(cartItems.firstCartItem);
     expect(await productsPage.getCartCount()).toBe(1);
   });
 
@@ -162,7 +165,7 @@ test.describe("Shopping Cart Tests", () => {
 
   test("should handle adding same item multiple times", async ({ page }) => {
     // Add same item twice
-    await productsPage.addProductToCart("Sauce Labs Backpack");
+    await productsPage.addProductToCart(cartItems.firstCartItem);
     await productsPage.goToCart();
 
     // Go back and try to add again (button should show "Remove")

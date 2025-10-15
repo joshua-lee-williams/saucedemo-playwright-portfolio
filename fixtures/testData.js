@@ -23,6 +23,12 @@ export const users = {
   },
 };
 
+export const cartItems = {
+  firstCartItem: "Sauce Labs Backpack",
+  secondCartItem: "Sauce Labs Bike Light",
+  thirdCartItem: "Sauce Labs Bolt T-Shirt",
+};
+
 export const checkoutInfo = {
   valid: {
     firstName: "John",
