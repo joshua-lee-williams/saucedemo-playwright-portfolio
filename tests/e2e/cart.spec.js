@@ -24,8 +24,9 @@ test.describe("Shopping Cart Tests", () => {
     await productsPage.goToCart();
     await expect(page).toHaveURL(/.*cart.html/);
 
-    expect(await cartPage.isOnCartPage()).toBe(true));
-    expect(await cartPage.isCartEmpty()).toBe(true));
+    expect(await cartPage.isOnCartPage()).toBe(true);
+    expect(await cartPage.isCartEmpty()).toBe(true);
+
   });
 
   test("should display added items in cart", async ({ page }) => {
